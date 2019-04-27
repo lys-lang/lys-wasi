@@ -1,0 +1,29 @@
+import lys::wasi::errno
+
+type Io = void
+
+impl Io {
+  /**
+   * Write to a file descriptor.
+   *
+   * Input: The file descriptor to which to write data.
+   * Input: List of scatter/gather vectors from which to retrieve data.
+   * Input: List of scatter/gather vectors from which to retrieve data.
+   * Output: The number of bytes written.
+   */
+  #[extern "wasi_unstable" "fd_write"]
+  fun fd_write(
+    fd: i32,
+    iovs: UnsafeCPointer, // ptr<struct<iovec>>
+    iovs_len: u32, // usize,
+    nwritten: UnsafeCPointer // ptr<usize>
+  ): errno = ???
+
+  /**
+   * Close a file descriptor.
+   *
+   * Input: The file descriptor to close.
+   */
+  #[extern "wasi_unstable" "fd_close"]
+  fun fd_close(fd: i32): errno = ???
+}

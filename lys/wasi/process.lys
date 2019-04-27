@@ -1,0 +1,22 @@
+import lys::wasi::processsignal
+import lys::wasi::errno
+
+type Process = void
+
+impl Process {
+  /**
+   * Terminate the process normally.
+   * An exit code of 0 indicates successful termination of the program.
+   * The meanings of other values is dependent on the environment.
+   * @param rval - The exit code returned by the process.
+   */
+  #[extern "wasi_unstable" "proc_exit"]
+  fun exit(rval: u32): void = ???
+
+  /**
+   * Send a signal to the process of the calling thread.
+   * @param sig - The signal condition to trigger.
+   */
+  #[extern "wasi_unstable" "proc_raise"]
+  fun raise(sig: ProcessSignal): errno = ???
+}

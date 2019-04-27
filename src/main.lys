@@ -1,0 +1,26 @@
+import lys::wasi::wasi
+import lys::wasi::io
+import lys::wasi::process
+
+var STD_OUT = 1
+
+fun printString(str: string): u32 = {
+  val cString = system::charset::utf8::toUtf8(str)
+  var iovec = IoVec(cString.ptr, cString.length)
+
+  var out = BoxedU32(0x0)
+
+  Io.fd_write(STD_OUT, iovec, 0x1, out)
+
+  out.value
+}
+
+#[export "_start"]
+fun main(): void = {
+  var message = "⚜️ Hello WASI from Lys   ⚛︎⚜︎☊☋⚰︎⚭☿😀"
+
+  printString(message)
+  Io.fd_close(STD_OUT)
+
+  Process.exit(0x0)
+}

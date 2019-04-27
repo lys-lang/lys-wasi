@@ -1,0 +1,234 @@
+type errno = u16
+
+/** Error codes returned by functions. */
+impl errno {
+  fun apply(value: i32): errno = %wasm { (get_local $value) }
+
+  /** No error occurred. System call completed successfully. */
+  val SUCCESS = errno(0)
+
+  /** Argument list too long. */
+  val TOOBIG = errno(1)
+
+  /** Permission denied. */
+  val ACCES = errno(2)
+
+  /** Address in use. */
+  val ADDRINUSE = errno(3)
+  /** Address not available. */
+  val ADDRNOTAVAIL = errno(4)
+
+  /** Address family not supported. */
+  val AFNOSUPPORT = errno(5)
+
+  /** Resource unavailable, or operation would block. */
+  val AGAIN = errno(6)
+
+  /** Connection already in progress. */
+  val ALREADY = errno(7)
+
+  /** Bad file descriptor. */
+  val BADF = errno(8)
+
+  /** Bad message. */
+  val BADMSG = errno(9)
+  /** Device or resource busy. */
+  val BUSY = errno(10)
+
+  /** Operation canceled. */
+  val CANCELED = errno(11)
+
+  /** No child processes. */
+  val CHILD = errno(12)
+
+  /** Connection aborted. */
+  val CONNABORTED = errno(13)
+
+  /** Connection refused. */
+  val CONNREFUSED = errno(14)
+
+  /** Connection reset. */
+  val CONNRESET = errno(15)
+
+  /** Resource deadlock would occur. */
+  val DEADLK = errno(16)
+
+  /** Destination address required. */
+  val DESTADDRREQ = errno(17)
+
+  /** Mathematics argument out of domain of function. */
+  val DOM = errno(18)
+
+  /** Reserved. */
+  val DQUOT = errno(19)
+
+  /** File exists. */
+  val EXIST = errno( 20)
+
+  /** Bad address. */
+  val FAULT = errno(21)
+
+  /** File too large. */
+  val FBIG = errno(22)
+
+  /** Host is unreachable. */
+  val HOSTUNREACH = errno(23)
+
+  /** Identifier removed. */
+  val IDRM = errno(24)
+
+  /** Illegal byte sequence. */
+  val ILSEQ = errno(25)
+
+  /** Operation in progress. */
+  val INPROGRESS = errno(26)
+
+  /** Interrupted function. */
+  val INTR = errno(27)
+
+  /** Invalid argument. */
+  val INVAL = errno(28)
+
+  /** I/O error. */
+  val IO = errno(29)
+
+  /** Socket is connected. */
+  val ISCONN = errno(30)
+
+  /** Is a directory. */
+  val ISDIR = errno(31)
+
+  /** Too many levels of symbolic links. */
+  val LOOP = errno(32)
+
+  /** File descriptor value too large. */
+  val MFILE = errno(33)
+
+  /** Too many links. */
+  val MLINK = errno(34)
+
+  /** Message too large. */
+  val MSGSIZE = errno(35)
+
+  /** Reserved. */
+  val MULTIHOP = errno(36)
+
+  /** Filename too long. */
+  val NAMETOOLONG = errno(37)
+
+  /** Network is down. */
+  val NETDOWN = errno(38)
+
+  /** Connection aborted by network. */
+  val NETRESET = errno(39)
+
+  /** Network unreachable. */
+  val NETUNREACH = errno(40)
+
+  /** Too many files open in system. */
+  val NFILE = errno(41)
+
+  /** No buffer space available. */
+  val NOBUFS = errno(42)
+
+  /** No such device. */
+  val NODEV = errno(43)
+
+  /** No such file or directory. */
+  val NOENT = errno(44)
+
+  /** Executable file format error. */
+  val NOEXEC = errno(45)
+
+  /** No locks available. */
+  val NOLCK = errno(46)
+
+  /** Reserved. */
+  val NOLINK = errno(47)
+
+  /** Not enough space. */
+  val NOMEM = errno(48)
+
+  /** No message of the desired type. */
+  val NOMSG = errno(49)
+
+  /** Protocol not available. */
+  val NOPROTOOPT = errno(50)
+
+  /** No space left on device. */
+  val NOSPC = errno(51)
+
+  /** Function not supported. */
+  val NOSYS = errno(52)
+
+  /** The socket is not connected. */
+  val NOTCONN = errno(53)
+
+  /** Not a directory or a symbolic link to a directory. */
+  val NOTDIR = errno(54)
+
+  /** Directory not empty. */
+  val NOTEMPTY = errno(55)
+
+  /** State not recoverable. */
+  val NOTRECOVERABLE = errno(56)
+
+  /** Not a socket. */
+  val NOTSOCK = errno(57)
+
+  /** Not supported, or operation not supported on socket. */
+  val NOTSUP = errno(58)
+
+  /** Inappropriate I/O control operation. */
+  val NOTTY = errno(59)
+
+  /** No such device or address. */
+  val NXIO = errno(60)
+
+  /** Value too large to be stored in data type. */
+  val OVERFLOW = errno(61)
+
+  /** Previous owner died. */
+  val OWNERDEAD = errno(62)
+
+  /** Operation not permitted. */
+  val PERM = errno(63)
+
+  /** Broken pipe. */
+  val PIPE = errno(64)
+  /** Protocol error. */
+  val PROTO = errno(65)
+
+  /** Protocol not supported. */
+  val PROTONOSUPPORT = errno(66)
+
+  /** Protocol wrong type for socket. */
+  val PROTOTYPE = errno(67)
+
+  /** Result too large. */
+  val RANGE = errno(68)
+
+  /** Read-only file system. */
+  val ROFS = errno(69)
+
+  /** Invalid seek. */
+  val SPIPE = errno(70)
+
+  /** No such process. */
+  val SRCH = errno(71)
+
+  /** Reserved. */
+  val STALE = errno(72)
+
+  /** Connection timed out. */
+  val TIMEDOUT = errno(73)
+
+  /** Text file busy. */
+  val TXTBSY = errno(74)
+
+  /** Cross-device link. */
+  val XDEV = errno(75)
+
+  /** Extension: Capabilities insufficient. */
+  val NOTCAPABLE = errno(76)
+}

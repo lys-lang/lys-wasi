@@ -1,0 +1,4 @@
+/** buf: The address of the buffer to be filled. */
+/** buf_len: The length of the buffer to be filled. */
+struct IoVec(buf: u32, buf_len: u32)
+struct BoxedU32(value: u32)
