@@ -2,7 +2,7 @@ type ProcessSignal = u8
 
 /** Signal condition. */
 impl ProcessSignal {
-  fun apply(value: i32): ProcessSignal = %wasm { (get_local $value) }
+  private fun apply(value: i32): ProcessSignal = %wasm { (get_local $value) }
 
   /** Hangup. */
   val HUP = ProcessSignal(1)

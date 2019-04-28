@@ -2,7 +2,7 @@ type errno = u16
 
 /** Error codes returned by functions. */
 impl errno {
-  fun apply(value: i32): errno = %wasm { (get_local $value) }
+  private fun apply(value: i32): errno = %wasm { (get_local $value) }
 
   /** No error occurred. System call completed successfully. */
   val SUCCESS = errno(0)

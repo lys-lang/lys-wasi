@@ -17,7 +17,7 @@ fun printString(str: string): u32 = {
 
 #[export "_start"]
 fun main(): void = {
-  var message = "⚜️ Hello WASI from Lys   ⚛︎⚜︎☊☋⚰︎⚭☿😀"
+  var message = "\n\n\n  ⚜️ Hello WASI from Lys 😀\n\n\n"
 
   printString(message)
   Io.fd_close(STD_OUT)
