@@ -1,8 +1,10 @@
 os: osx
 language: node_js
 node_js:
-  - "10"
-  - "11"
   - "12"
-before_install: make install
+before_install:
+  - make install
+  - export WASMER_DIR="$HOME/.wasmer"
+  - source "$WASMER_DIR/wasmer.sh"
+
 script: make test
