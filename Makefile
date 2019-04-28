@@ -1,8 +1,3 @@
-install:
-	npm install -g lys-compiler
-	curl https://get.wasmer.io -sSfL | sh
-
-
 build:
 	(rm -rf build || true)
 	lys src/main.lys --wast --no-optimize
